@@ -1,0 +1,15 @@
+{
+  "name": "async-programming-in-js",
+  "version": "1.0.0",
+  "description": "Repo used for the Pluralsight course Async Programming in JS",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.1",
+    "nodemon": "^2.0.20"
+  }
+}
