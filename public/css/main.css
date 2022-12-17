@@ -246,9 +246,33 @@ li.order-item::before{
 
 .order-header {
     font-weight: bold;
+    grid-area: "header";
 }
 
+.buffer {
+    grid-area: 2 / 1 / 2 / 6
+}
+.item {
+    grid-area: "main";
+}
+
+.item-buffer {
+    grid-column: 1 / span 5
+}
 .currency {
     font-weight: bolder;
     color: #faa541;
+}
+
+.j-s-end {
+    justify-self: end;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr auto;
+    grid-template-areas:
+            "header header header header header"
+            "buffer buffer buffer buffer buffer"
+            "main main main main main"
 }

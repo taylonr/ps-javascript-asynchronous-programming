@@ -6,7 +6,7 @@ const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
 
-server.get("/orderStatuses", (req, res, next) => {
+server.get("/api/orderStatuses", (req, res, next) => {
   setTimeout(() => {
     next();
   }, 1500);

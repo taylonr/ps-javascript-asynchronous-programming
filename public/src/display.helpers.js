@@ -1,22 +1,19 @@
 const showOrderList = (id, data) => {
   const templ = `
-  <div class="flex justify-between order-header bb">
-    <span>Order Id</span>
-    <span>Order Date</span>
-    <span>Order Status</span>
-    <span>Shipping Address</span>
-    <span>Total</span>
-  </div>
-  <ul>{{#each item}}
-    <li class="flex justify-between order-item pv5 bb bw2 b--light-gray">
-        <span>{{id}}</span>
-        <span>{{date}}</span>
-        <span>{{orderStatus}}</span>
-        <span>{{shippingAddressText}}</span>
-        <span class="currency">{{total}}</span>
-    </li>
-    {{/each}}
-</ul>`;
+    <span class="order-header">Order Id</span>
+    <span class="order-header">Order Date</span>
+    <span class="order-header">Order Status</span>
+    <span class="order-header">Shipping Address</span>
+    <span class="order-header j-s-end">Total</span>
+    <span class="buffer bb"></span>
+  {{#each item}}
+        <span class="item pv5">{{id}}</span>
+        <span class="item pv5">{{date}}</span>
+        <span class="item pv5">{{orderStatus}}</span>
+        <span class="item pv5">{{shippingAddressText}}</span>
+        <span class="item pv5 currency j-s-end">{{total}}</span>
+        <span class="item-buffer bb bw2 b--light-gray"></span>
+    {{/each}}`;
 
   const template = Handlebars.compile(templ);
 
