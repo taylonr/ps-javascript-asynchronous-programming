@@ -20,3 +20,8 @@ const showOrderList = (id, data) => {
   const results = template({ item: data });
   $(id).html(results);
 };
+
+const showError = (id, error) => {
+  const results = `<h2>${error}</h2>`;
+  $(id).html(results);
+};
