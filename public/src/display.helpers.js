@@ -25,3 +25,13 @@ const showError = (id, error) => {
   const results = `<h2>${error}</h2>`;
   $(id).html(results);
 };
+
+const showWaiting = () => {
+  const waiting = document.getElementsByClassName("waiting")[0];
+  waiting.classList.remove("hidden");
+};
+
+const hideWaiting = () => {
+  const waiting = document.getElementsByClassName("waiting")[0];
+  waiting.classList.add("hidden");
+};

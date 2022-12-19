@@ -276,3 +276,18 @@ li.order-item::before{
             "buffer buffer buffer buffer buffer"
             "main main main main main"
 }
+
+.hidden {
+    display: none;
+}
+
+.waiting {
+    background: lightgray;
+    height: 300px;
+}
+
+.waiting h1 {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
