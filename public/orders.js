@@ -1,10 +1,4 @@
-let statusReq = axios.get("http://localhost:3000/api/orderStatuses");
-let addressReq = axios.get("http://localhost:3000/api/addresses");
-let addressTypeReq = axios.get("http://localhost:3000/api/addressTypes");
-
-let statuses = [];
-let addresses = [];
-let addressTypes = [];
+/** Promise.allSettled */
 
 Promise.allSettled([statusReq, addressReq, addressTypeReq])
   .then(([statusRes, addressRes, addressTypeRes]) => {
@@ -44,3 +38,41 @@ Promise.allSettled([statusReq, addressReq, addressTypeReq])
   .catch((reasons) => {
     showError("#order-list", reasons);
   });
+
+/** Promise.all */
+/*
+let statusReq = axios.get("http://localhost:3000/api/orderStatuses");
+let addressReq = axios.get("http://localhost:3000/api/addresses");
+
+let statuses = [];
+let addresses = [];
+
+Promise.all([statusReq, addressReq])
+  .then(([statusRes, addressRes]) => {
+    statuses = statusRes.data;
+    addresses = addressRes.data;
+
+    return axios.get("http://localhost:3000/api/orders");
+  })
+  .then(({ data }) => {
+    let orders = data.map((d) => {
+      const addr = addresses.find((a) => a.id === d.shippingAddress);
+
+      return {
+        ...d,
+        orderStatus: statuses.find((s) => s.id === d.orderStatusId).description,
+        shippingAddressText: `${addr.street} ${addr.city}, ${addr.state} ${addr.zipCode}`,
+      };
+    });
+
+    showOrderList("#order-list", orders);
+  });
+
+let statusReq = axios.get("http://localhost:3000/api/orderStatuses");
+let addressReq = axios.get("http://localhost:3000/api/addresses");
+let addressTypeReq = axios.get("http://localhost:3000/api/addressTypes");
+
+let statuses = [];
+let addresses = [];
+let addressTypes = [];
+*/
