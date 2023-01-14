@@ -35,3 +35,12 @@ const hideWaiting = () => {
   const waiting = document.getElementsByClassName("waiting")[0];
   waiting.classList.add("hidden");
 };
+
+const showMessage = (message) => {
+  const h2 = document.getElementsByTagName("h2")[0];
+  const parent = h2.parentNode;
+  const msg = document.createElement("h3");
+  msg.innerText = message;
+
+  parent.insertBefore(msg, h2);
+};
